@@ -48,6 +48,16 @@ int main() {
    printf("Insira a quantidade de pontos turísticos: \n");
    scanf("%d", &pont_turi_2);
 
+   // Agora vamos calcular dois novos atributos com base nas informações recebidas do usuário
+
+   // Densidade populacional
+   float den_pop_1 = pop_1/area_1; 
+   float den_pop_2 = pop_2/area_2;
+
+    // PIB per capita
+    float PIB_per_capita_1 = PIB_1/pop_1;
+    float PIB_per_capita_2 = PIB_2/pop_2;
+
     // Exibição dos Dados das Cartas:
     printf("*** Exibindo as cartas cadastradas ***");
     printf(" Primeira carta \n");
@@ -55,13 +65,16 @@ int main() {
     printf("Área: %f \n", area_1);
     printf("PIB: %f \n", PIB_1);
     printf("Número de pontos turísticos: %d \n", pont_turi_1);
-
+    printf("Densidade populacional: %f \n", den_pop_1);
+    printf("PIB per capita: %f \n", PIB_per_capita_1);
 
     printf(" Segunda carta \n");
     printf("População: %d \n", pop_2);
     printf("Área: %f \n", area_2);
     printf("PIB: %f \n", PIB_2);
     printf("Número de pontos turísticos: %d \n", pont_turi_2);
+    printf("Densidade populacional: %f \n", den_pop_2);
+    printf("PIB per capita: %f \n", PIB_per_capita_2);
 
     return 0;
 }
