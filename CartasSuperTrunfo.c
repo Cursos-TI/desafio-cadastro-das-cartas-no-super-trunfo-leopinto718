@@ -76,5 +76,25 @@ int main() {
     printf("Densidade populacional: %f \n", den_pop_2);
     printf("PIB per capita: %f \n", PIB_per_capita_2);
 
+// Comparação das cartas (atributo população)
+
+int comparacao;
+
+printf("** Comparando o atributo de população das cartas\n");
+
+comparacao = pop_1 > pop_2;
+
+if(comparacao == 1){
+    
+    printf("Cidade 1 ganhou!\n");
+
+} else {
+
+    printf("Cidade 2 ganhou!\n");
+
+ }
+
+
+
     return 0;
 }
