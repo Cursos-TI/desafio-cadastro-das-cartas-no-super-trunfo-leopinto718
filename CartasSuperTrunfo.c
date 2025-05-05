@@ -11,14 +11,18 @@ int main() {
     // Definindo os atributos para as duas cartas 
     // código da cidade, nome, população, área, PIB, número de pontos turísticos
     //int cod_cid_1, cond_cid_2;
-    //char[] nome1, nome1;
+    char pais1[50], pais2[50];
     int pop_1, pop_2;
     float area_1, area_2;
     float PIB_1, PIB_2;
     int pont_turi_1, pont_turi_2;
+    
 
     // Cadastrando a primeira carta
     printf("Vamos cadastrar a primeira carta! \n");
+
+    printf("Insira o nome do país: \n");
+    scanf("%s", pais1);
 
     printf("Insira a população: \n");
     scanf("%d", &pop_1);
@@ -35,6 +39,9 @@ int main() {
 
    // Cadastrando a segunda carta
    printf("Vamos cadastrar a segunda carta! \n");
+
+   printf("Insira o nome do país: \n");
+   scanf("%s", pais2);
 
    printf("Insira a população: \n");
    scanf("%d", &pop_2);
@@ -76,25 +83,158 @@ int main() {
     printf("Densidade populacional: %f \n", den_pop_2);
     printf("PIB per capita: %f \n", PIB_per_capita_2);
 
-// Comparação das cartas (atributo população)
 
-int comparacao;
+    // Comparação das cartas 
+    // Menu interativo para os usuários escolherem qual atributo querem comparar
 
-printf("** Comparando o atributo de população das cartas\n");
+    int escolha_usuario; //variável para receber a escolha do usuário
 
-comparacao = pop_1 > pop_2;
-
-if(comparacao == 1){
+    printf("*** Qual atributo você quer comparar? ***\n");
+    printf("Escolha uma opção (1 a 6):\n");
+    printf("1: População \n");
+    printf("2: Área \n");
+    printf("3: PIB \n");
+    printf("4: Número de pontos turísticos \n");
+    printf("5: Densidade populacional \n");
+    printf("6: PIB per capita \n");
     
-    printf("Cidade 1 ganhou!\n");
+    //Lendo a escolha do usuário
+    scanf("%d", &escolha_usuario);
 
-} else {
+    //Executando a comparação de acordo com a escolha do usuário
+    switch(escolha_usuario) {
+        case 1:
+            
+            printf("Os dois países comparados foram: %s e %s \n", pais1, pais2);
+            printf("Você escolheu comparar o atributo população\n");
+            printf("População de %s: %d \n", pais1, pop_1);
+            printf("População de %s: %d \n", pais2, pop_2);
 
-    printf("Cidade 2 ganhou!\n");
+            // Executando as comparações
+            if(pop_1 > pop_2){
+                
+                printf("Carta 1 ganhou!\n");
+                
+            } 
+            else if(pop_1 < pop_2){
 
- }
+                printf("Carta 2 ganhou!\n");
 
+            }
+            else {
+                printf("Empate!");
+            }
+            break;
+        case 2:
+            printf("Os dois países comparados foram: %s e %s \n", pais1, pais2);
+            printf("Você escolheu comparar o atributo área\n");
+            printf("Área de %s: %d \n", pais1, area_1);
+            printf("Área de %s: %d \n", pais2, area_2);
+           
 
+            // Executando as comparações
+            if(area_1 > area_2){
+                
+                printf("Carta 1 ganhou!\n");
+                
+            } 
+            else if(area_1 < area_2){
+
+                printf("Carta 2 ganhou!\n");
+
+            }
+            else {
+                printf("Empate!");
+            }
+            break;
+        case 3: //Opção PIB
+            printf("Os dois países comparados foram: %s e %s \n", pais1, pais2);
+            printf("Você escolheu comparar o atributo PIB\n");
+            printf("PIB %s: %d \n", pais1, PIB_1);
+            printf("PIB %s: %d \n", pais2, PIB_2);
+
+            // Executando as comparações
+            if(PIB_1 > PIB_2){
+                
+                printf("Carta 1 ganhou!\n");
+                
+            } 
+            else if(PIB_1 < PIB_2){
+
+                printf("Carta 2 ganhou!\n");
+
+            }
+            else {
+                printf("Empate!");
+            }
+            break;
+        case 4: // Número de pontos turísticos
+            printf("Os dois países comparados foram: %s e %s \n", pais1, pais2);
+            printf("Você escolheu comparar o atributo Número de pontos turísticos\n");
+            printf("Numéro de pontos turísticos de  %s: %d \n", pais1, pont_turi_1);
+            printf("Numéro de pontos turísticos de %s: %d \n", pais2, pont_turi_2);
+
+            // Executando as comparações
+            if(pont_turi_1 > pont_turi_2){
+                
+                printf("Carta 1 ganhou!\n");
+                
+            } 
+            else if(pont_turi_1 < pont_turi_2){
+
+                printf("Carta 2 ganhou!\n");
+
+            }
+            else {
+                printf("Empate!");
+            }
+            break;
+        case 5: // Densidade populacional
+            printf("Os dois países comparados foram: %s e %s \n", pais1, pais2);
+            printf("Você escolheu comparar o atributo Densidade populacional\n");
+            printf("Densidade populacional de  %s: %d \n", pais1, den_pop_1);
+            printf("Densidade populacional de %s: %d \n", pais2, den_pop_2);
+
+            // Executando as comparações
+            if(den_pop_1 > den_pop_2){
+                
+                printf("Carta 2 ganhou!\n");
+                
+            } 
+            else if(den_pop_1 < den_pop_2){
+
+                printf("Carta 1 ganhou!\n");
+
+            }
+            else {
+                printf("Empate!");
+            }
+            break;
+        case 6: //PIB per capita
+            printf("Os dois países comparados foram: %s e %s \n", pais1, pais2);
+            printf("Você escolheu comparar o atributo PIB per capita\n");
+            printf("PIB per capita de  %s: %d \n", pais1, PIB_per_capita_1);
+            printf("PIB per capita de %s: %d \n", pais2, PIB_per_capita_2);
+
+            // Executando as comparações
+            if(PIB_per_capita_1 > PIB_per_capita_2){
+                
+                printf("Carta 1 ganhou!\n");
+                
+            } 
+            else if(PIB_per_capita_1 < PIB_per_capita_2){
+
+                printf("Carta 2 ganhou!\n");
+
+            }
+            else {
+                printf("Empate!");
+            }
+
+            break;
+        default:
+            printf("Opção inválida! Escolha um número entre 1 e 6.\n");
+    }
 
     return 0;
 }
