@@ -1,94 +1,87 @@
-# Desafio Super Trunfo - Países - Cadastro das Cartas - Atualizado: 21/02
+## Super Trunfo de Países - README
+📝 Descrição
+Este projeto implementa um jogo de Super Trunfo que compara atributos geográficos e econômicos entre dois países (Alemanha e Brasil). O jogador seleciona dois atributos diferentes, e o programa compara as cartas baseado na soma desses atributos.
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam os atributos das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países", onde você comparará os atributos das cidades.
+##🛠️ Como Compilar e Executar
+Requisitos
+Compilador GCC instalado
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+Sistema operacional Linux/Windows/macOS
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior.  **Você deve escolher qual desafio quer realizar.**
+Compilação
+bash
+gcc super_trunfo.c -o super_trunfo
+Execução
+bash
+./super_trunfo
 
-🚨 **Atenção:** O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções `scanf` para ler os dados e `printf` para exibi-los.
+##🎮 Como Jogar
+O programa exibirá um menu com 6 atributos disponíveis
 
-## 🎮 Nível Novato: Cadastro Básico
+Escolha o primeiro atributo digitando seu número
 
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades.  Imagine um país dividido em oito estados (A a H), e cada estado com quatro cidades (1 a 4).  A combinação forma o código da carta (ex: A01, B02).
+Escolha um segundo atributo diferente do primeiro
 
-🚩 **Objetivo:** Criar um programa em C que cadastra **duas** cartas com os seguintes atributos:
+O programa mostrará:
 
-*   População (`int`)
-*   Área (`float`)
-*   PIB (`float`)
-*   Número de pontos turísticos (`int`)
+Os valores de cada atributo para ambos países
 
-⚙️ **Funcionalidades do Sistema:**
+A soma dos atributos selecionados
 
-*   O sistema permitirá ao usuário cadastrar os dados de **duas** cartas manualmente via terminal.
-*   Após o cadastro, o sistema exibirá os dados de cada cidade de forma organizada.
+O país vencedor baseado na maior soma
 
-📥 **Entrada** e 📤 **Saída de Dados:**
+##📊 Atributos Disponíveis
+Número	Atributo	Descrição
+1	População	Número de habitantes do país
+2	Área	Tamanho do território em km²
+3	PIB	Produto Interno Bruto em milhões US$
+4	Pontos turísticos	Quantidade de atrações turísticas
+5	Densidade populacional	Habitantes por km²
+6	PIB per capita	PIB dividido pela população
+##✨ Exemplo de Jogo
+Escolha o primeiro atributo para comparar:
+1. Populacao
+2. Area
+3. PIB
+4. Pontos turisticos
+5. Densidade populacional
+6. PIB per capita
+Digite o numero da opcao: 1
 
-*   O usuário insere os dados de cada carta interativamente via `scanf`.
-*   O programa exibe os dados cadastrados usando `printf`, com cada atributo em uma nova linha.
+Voce escolheu: Populacao
 
-**Simplificações para o Nível Novato:**
+Escolha o segundo atributo para comparar:
+2. Area
+3. PIB
+4. Pontos turisticos
+5. Densidade populacional
+6. PIB per capita
+Digite o numero da opcao: 3
 
-*   Cadastre apenas **duas** cartas.
-*   Concentre-se na leitura, armazenamento e exibição. Não implemente comparações ou outros recursos.
-*   **Não use** laços (`for`, `while`) ou condicionais (`if`, `else`).
+Voce escolheu: PIB
 
+=== RESULTADOS ===
 
-## 🛡️ Nível Aventureiro: Cálculo de Atributos
+Alemanha:
+- Populacao: 83200000.00
+- PIB: 4226000.00
+SOMA: 87426000.00
 
-No nível Aventureiro, você expandirá o sistema para incluir o cálculo de dois novos atributos: Densidade Populacional e PIB per Capita.
+Brasil:
+- Populacao: 214000000.00
+- PIB: 1600000.00
+SOMA: 215600000.00
 
-🆕 **Diferença em relação ao Nível Novato:**
+=== RESULTADO FINAL ===
+Soma Alemanha: 87426000.00
+Soma Brasil: 215600000.00
 
-*   **Novos Atributos:**
-    *   Densidade Populacional: População / Área (`float`)
-    *   PIB per Capita: PIB / População (`float`)
+VENCEDOR: Brasil (87426000.00 vs 215600000.00)
+##📌 Observações
+O jogo compara automaticamente a soma dos dois atributos selecionados
 
-⚙️ **Funcionalidades do Sistema:**
+O país com maior soma vence a partida
 
-*   O sistema calculará automaticamente a Densidade Populacional e o PIB per Capita.
-*   Os novos atributos serão exibidos junto com os demais.
+Em caso de empate, o jogo declara "EMPATE"
 
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada do nível Novato.
-*   A saída exibirá também os atributos calculados.
-
-**Simplificações para o Nível Intermediário:**
-
-*   Continue cadastrando apenas **duas** cartas.
-*   Continue **sem usar** laços (`for`, `while`) ou condicionais (`if`, `else`).
-
-
-
-## 🏆 Nível Mestre: Comparação e Super Poder
-
-No nível Mestre, você implementará a comparação entre duas cartas e o cálculo do "Super Poder".
-
-🆕 **Diferença em relação ao Nível Aventureiro:**
-
-*   **Comparação de Cartas:** O usuário poderá comparar as duas cartas.
-*   **Super Poder:** Soma de todos os atributos (inclusive os calculados), com a densidade populacional *invertida* antes da soma (1/densidade).  Tipo: `float`.
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   Comparação atributo a atributo, mostrando qual carta venceu (1 se a Carta 1 vence, 0 se a Carta 2 vence).
-*   Para Densidade Populacional, vence a carta com o *menor* valor.
-*   Para os demais atributos (e o Super Poder), vence a carta com o *maior* valor.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada dos níveis anteriores, mas a População agora é `unsigned long int`.
-*   A saída mostrará o resultado da comparação para cada atributo e o Super Poder.
-
-**Observação:**  Preste atenção à conversão de tipos ao calcular o Super Poder!
-
-
-## 🏁 Conclusão
-
-Ao concluir qualquer um dos níveis, você terá dado um passo importante no desenvolvimento do Super Trunfo - Países. Boa sorte e divirta-se programando!
-
-Equipe de Ensino - MateCheck
-content_copy
+O menu é dinâmico - atributos já selecionados não aparecem novamente
