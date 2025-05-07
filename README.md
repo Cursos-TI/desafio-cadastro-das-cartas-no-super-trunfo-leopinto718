@@ -12,5 +12,3 @@ Jogo de cartas estilo Super Trunfo que compara atributos geográficos e econômi
 ### Compilação
 ```bash
 gcc super_trunfo.c -o super_trunfo
-
-./super_trunfo
